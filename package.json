@@ -1,0 +1,288 @@
+{
+  "name": "@easrng/node-shim",
+  "version": "0.0.1",
+  "description": "shim node modules with process.getBuiltinModule",
+  "author": "easrng <https://easrng.net>",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.js && deno fmt dist ."
+  },
+  "exports": {
+    "./_http_agent": {
+      "require": "./dist/_http_agent.js",
+      "default": "./dist/_http_agent.mjs"
+    },
+    "./_http_client": {
+      "require": "./dist/_http_client.js",
+      "default": "./dist/_http_client.mjs"
+    },
+    "./_http_common": {
+      "require": "./dist/_http_common.js",
+      "default": "./dist/_http_common.mjs"
+    },
+    "./_http_incoming": {
+      "require": "./dist/_http_incoming.js",
+      "default": "./dist/_http_incoming.mjs"
+    },
+    "./_http_outgoing": {
+      "require": "./dist/_http_outgoing.js",
+      "default": "./dist/_http_outgoing.mjs"
+    },
+    "./_http_server": {
+      "require": "./dist/_http_server.js",
+      "default": "./dist/_http_server.mjs"
+    },
+    "./_stream_duplex": {
+      "require": "./dist/_stream_duplex.js",
+      "default": "./dist/_stream_duplex.mjs"
+    },
+    "./_stream_passthrough": {
+      "require": "./dist/_stream_passthrough.js",
+      "default": "./dist/_stream_passthrough.mjs"
+    },
+    "./_stream_readable": {
+      "require": "./dist/_stream_readable.js",
+      "default": "./dist/_stream_readable.mjs"
+    },
+    "./_stream_transform": {
+      "require": "./dist/_stream_transform.js",
+      "default": "./dist/_stream_transform.mjs"
+    },
+    "./_stream_wrap": {
+      "require": "./dist/_stream_wrap.js",
+      "default": "./dist/_stream_wrap.mjs"
+    },
+    "./_stream_writable": {
+      "require": "./dist/_stream_writable.js",
+      "default": "./dist/_stream_writable.mjs"
+    },
+    "./_tls_common": {
+      "require": "./dist/_tls_common.js",
+      "default": "./dist/_tls_common.mjs"
+    },
+    "./_tls_wrap": {
+      "require": "./dist/_tls_wrap.js",
+      "default": "./dist/_tls_wrap.mjs"
+    },
+    "./assert": {
+      "require": "./dist/assert.js",
+      "default": "./dist/assert.mjs"
+    },
+    "./assert/strict": {
+      "require": "./dist/assert/strict.js",
+      "default": "./dist/assert/strict.mjs"
+    },
+    "./async_hooks": {
+      "require": "./dist/async_hooks.js",
+      "default": "./dist/async_hooks.mjs"
+    },
+    "./buffer": {
+      "require": "./dist/buffer.js",
+      "default": "./dist/buffer.mjs"
+    },
+    "./child_process": {
+      "require": "./dist/child_process.js",
+      "default": "./dist/child_process.mjs"
+    },
+    "./cluster": {
+      "require": "./dist/cluster.js",
+      "default": "./dist/cluster.mjs"
+    },
+    "./console": {
+      "require": "./dist/console.js",
+      "default": "./dist/console.mjs"
+    },
+    "./constants": {
+      "require": "./dist/constants.js",
+      "default": "./dist/constants.mjs"
+    },
+    "./crypto": {
+      "require": "./dist/crypto.js",
+      "default": "./dist/crypto.mjs"
+    },
+    "./dgram": {
+      "require": "./dist/dgram.js",
+      "default": "./dist/dgram.mjs"
+    },
+    "./diagnostics_channel": {
+      "require": "./dist/diagnostics_channel.js",
+      "default": "./dist/diagnostics_channel.mjs"
+    },
+    "./dns": {
+      "require": "./dist/dns.js",
+      "default": "./dist/dns.mjs"
+    },
+    "./dns/promises": {
+      "require": "./dist/dns/promises.js",
+      "default": "./dist/dns/promises.mjs"
+    },
+    "./domain": {
+      "require": "./dist/domain.js",
+      "default": "./dist/domain.mjs"
+    },
+    "./events": {
+      "require": "./dist/events.js",
+      "default": "./dist/events.mjs"
+    },
+    "./fs": {
+      "require": "./dist/fs.js",
+      "default": "./dist/fs.mjs"
+    },
+    "./fs/promises": {
+      "require": "./dist/fs/promises.js",
+      "default": "./dist/fs/promises.mjs"
+    },
+    "./http": {
+      "require": "./dist/http.js",
+      "default": "./dist/http.mjs"
+    },
+    "./http2": {
+      "require": "./dist/http2.js",
+      "default": "./dist/http2.mjs"
+    },
+    "./https": {
+      "require": "./dist/https.js",
+      "default": "./dist/https.mjs"
+    },
+    "./inspector": {
+      "require": "./dist/inspector.js",
+      "default": "./dist/inspector.mjs"
+    },
+    "./inspector/promises": {
+      "require": "./dist/inspector/promises.js",
+      "default": "./dist/inspector/promises.mjs"
+    },
+    "./module": {
+      "require": "./dist/module.js",
+      "default": "./dist/module.mjs"
+    },
+    "./net": {
+      "require": "./dist/net.js",
+      "default": "./dist/net.mjs"
+    },
+    "./os": {
+      "require": "./dist/os.js",
+      "default": "./dist/os.mjs"
+    },
+    "./path": {
+      "require": "./dist/path.js",
+      "default": "./dist/path.mjs"
+    },
+    "./path/posix": {
+      "require": "./dist/path/posix.js",
+      "default": "./dist/path/posix.mjs"
+    },
+    "./path/win32": {
+      "require": "./dist/path/win32.js",
+      "default": "./dist/path/win32.mjs"
+    },
+    "./perf_hooks": {
+      "require": "./dist/perf_hooks.js",
+      "default": "./dist/perf_hooks.mjs"
+    },
+    "./process": {
+      "require": "./dist/process.js",
+      "default": "./dist/process.mjs"
+    },
+    "./punycode": {
+      "require": "./dist/punycode.js",
+      "default": "./dist/punycode.mjs"
+    },
+    "./querystring": {
+      "require": "./dist/querystring.js",
+      "default": "./dist/querystring.mjs"
+    },
+    "./readline": {
+      "require": "./dist/readline.js",
+      "default": "./dist/readline.mjs"
+    },
+    "./readline/promises": {
+      "require": "./dist/readline/promises.js",
+      "default": "./dist/readline/promises.mjs"
+    },
+    "./repl": {
+      "require": "./dist/repl.js",
+      "default": "./dist/repl.mjs"
+    },
+    "./stream": {
+      "require": "./dist/stream.js",
+      "default": "./dist/stream.mjs"
+    },
+    "./stream/consumers": {
+      "require": "./dist/stream/consumers.js",
+      "default": "./dist/stream/consumers.mjs"
+    },
+    "./stream/promises": {
+      "require": "./dist/stream/promises.js",
+      "default": "./dist/stream/promises.mjs"
+    },
+    "./stream/web": {
+      "require": "./dist/stream/web.js",
+      "default": "./dist/stream/web.mjs"
+    },
+    "./string_decoder": {
+      "require": "./dist/string_decoder.js",
+      "default": "./dist/string_decoder.mjs"
+    },
+    "./sys": {
+      "require": "./dist/sys.js",
+      "default": "./dist/sys.mjs"
+    },
+    "./timers": {
+      "require": "./dist/timers.js",
+      "default": "./dist/timers.mjs"
+    },
+    "./timers/promises": {
+      "require": "./dist/timers/promises.js",
+      "default": "./dist/timers/promises.mjs"
+    },
+    "./tls": {
+      "require": "./dist/tls.js",
+      "default": "./dist/tls.mjs"
+    },
+    "./trace_events": {
+      "require": "./dist/trace_events.js",
+      "default": "./dist/trace_events.mjs"
+    },
+    "./tty": {
+      "require": "./dist/tty.js",
+      "default": "./dist/tty.mjs"
+    },
+    "./url": {
+      "require": "./dist/url.js",
+      "default": "./dist/url.mjs"
+    },
+    "./util": {
+      "require": "./dist/util.js",
+      "default": "./dist/util.mjs"
+    },
+    "./util/types": {
+      "require": "./dist/util/types.js",
+      "default": "./dist/util/types.mjs"
+    },
+    "./v8": {
+      "require": "./dist/v8.js",
+      "default": "./dist/v8.mjs"
+    },
+    "./vm": {
+      "require": "./dist/vm.js",
+      "default": "./dist/vm.mjs"
+    },
+    "./wasi": {
+      "require": "./dist/wasi.js",
+      "default": "./dist/wasi.mjs"
+    },
+    "./worker_threads": {
+      "require": "./dist/worker_threads.js",
+      "default": "./dist/worker_threads.mjs"
+    },
+    "./zlib": {
+      "require": "./dist/zlib.js",
+      "default": "./dist/zlib.mjs"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5"
+  },
+  "packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387"
+}
