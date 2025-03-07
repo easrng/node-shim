@@ -1,3 +1,4 @@
+// @ts-check
 const { mkdirSync, writeFileSync, existsSync, rmSync } = require("fs");
 const { resolve, basename, relative } = require("path");
 const { builtinModules } = require("module");
@@ -5,7 +6,7 @@ const dist = resolve(__dirname, "dist");
 if (existsSync(dist)) rmSync(dist, { force: true, recursive: true });
 mkdirSync(dist);
 for (const module of builtinModules) {
-  const keys = Object.keys(require("node:" + module));
+  const keys = Object.keys(process.getBuiltinModule("node:" + module) || {});
   mkdirSync(resolve(dist, module, ".."), { recursive: true });
   writeFileSync(
     resolve(dist, module + ".js"),
@@ -37,7 +38,7 @@ for (const module of builtinModules) {
         }\nimport _syncRegistry from ${
           JSON.stringify(
             relative(
-              resolve(dist, module + ".mjs"),
+              resolve(dist, module, ".."),
               resolve(__dirname, "lib/syncRegistry.js"),
             ),
           )
@@ -45,7 +46,11 @@ for (const module of builtinModules) {
           keys.join(
             ", ",
           )
-        }} = _mod)\n}\n_sync()\n_syncRegistry.register(_sync)\n`
+        }} = _mod)\n}\n_syncRegistry.register(_sync)\n` +
+          (module === "module"
+            ? `\nif (_mod.syncBuiltinESMExports)_syncRegistry.register(_mod.syncBuiltinESMExports)\n_mod.syncBuiltinESMExports = _syncRegistry.sync\n`
+            : "") +
+          "_sync()"
         : ""),
   );
   writeFileSync(

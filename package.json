@@ -1,6 +1,6 @@
 {
   "name": "@easrng/node-shim",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "shim node modules with process.getBuiltinModule",
   "author": "easrng <https://easrng.net>",
   "license": "MIT",
